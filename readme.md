@@ -16,7 +16,7 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/biFebriansyah/backendIntro.git
+git clone https://github.com/biFebriansyah/goback.git
 ```
 
 2. Install dependencies
