@@ -1,0 +1,20 @@
+POST http://localhost:8080/food HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "indomie",
+    "price": 2000
+}
+
+### GET DATA
+GET http://localhost:8080/product/ HTTP/1.1
+
+### SAVE
+POST http://localhost:8080/product/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "indomie soto",
+    "price": "2000",
+    "image": "imag.jpg"
+}
