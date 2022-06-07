@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/biFebriansyah/goback/src/database/gorm/models"
+	"github.com/biFebriansyah/goback/src/helpers"
 )
 
 type product_ctrl struct {
@@ -24,7 +25,7 @@ func (rep *product_ctrl) GetAll(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, err.Error())
 	}
 
-	json.NewEncoder(w).Encode(data)
+	helpers.New(data, 200, false).Send(w)
 }
 
 func (rep *product_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
