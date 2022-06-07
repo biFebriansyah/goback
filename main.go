@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/biFebriansyah/goback/src/routers"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
@@ -14,7 +14,6 @@ func main() {
 		log.Fatal(err.Error())
 	}
 
-	fmt.Println("aplikasi berjalan")
 	if err := http.ListenAndServe(":8080", mainRoute); err != nil {
 		log.Fatal("aplikasi gagal dijalankan")
 	}

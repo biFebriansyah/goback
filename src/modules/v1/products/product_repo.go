@@ -3,6 +3,7 @@ package products
 import (
 	"errors"
 
+	"github.com/biFebriansyah/goback/src/database/gorm/models"
 	"gorm.io/gorm"
 )
 
@@ -14,8 +15,8 @@ func NewRepo(grm *gorm.DB) *product_repo {
 	return &product_repo{grm}
 }
 
-func (r *product_repo) FindAll() (*Products, error) {
-	var products Products
+func (r *product_repo) FindAll() (*models.Products, error) {
+	var products models.Products
 
 	result := r.db.Find(&products)
 
@@ -26,7 +27,7 @@ func (r *product_repo) FindAll() (*Products, error) {
 	return &products, nil
 }
 
-func (r *product_repo) Add(data *Product) (*Product, error) {
+func (r *product_repo) Add(data *models.Product) (*models.Product, error) {
 
 	result := r.db.Create(data)
 

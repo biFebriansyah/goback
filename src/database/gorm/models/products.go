@@ -1,8 +1,6 @@
-package products
+package models
 
-import (
-	"time"
-)
+import "time"
 
 type Product struct {
 	ID        uint      `gorm:"primaryKey" json:"id"`

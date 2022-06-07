@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/biFebriansyah/goback/src/database/gorm/models"
 )
 
 type product_ctrl struct {
@@ -28,7 +30,7 @@ func (rep *product_ctrl) GetAll(w http.ResponseWriter, r *http.Request) {
 func (rep *product_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	var data Product
+	var data models.Product
 	json.NewDecoder(r.Body).Decode(&data)
 
 	result, err := rep.repo.Add(&data)

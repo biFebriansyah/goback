@@ -1,8 +1,9 @@
-package database
+package gorm
 
 import (
 	"errors"
 	"fmt"
+	"os"
 	"time"
 
 	"gorm.io/driver/postgres"
@@ -10,24 +11,25 @@ import (
 )
 
 func New() (*gorm.DB, error) {
-	host := "localhost"
-	user := "golang"
-	password := "abcd1234"
-	dbName := "godb"
+
+	host := os.Getenv("DB_HOST")
+	user := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASS")
+	dbName := os.Getenv("DB_NAME")
 
 	config := fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable", host, user, password, dbName)
 
 	gormDb, err := gorm.Open(postgres.Open(config), &gorm.Config{})
 	if err != nil {
-		return nil, errors.New("gagal konek db")
+		return nil, errors.New("gorm failed to connect")
 	}
 
 	db, err := gormDb.DB()
 	if err != nil {
-		return nil, errors.New("gagal konek db")
+		return nil, errors.New("sql failed to connect")
 	}
 
-	db.SetConnMaxIdleTime(10)
+	db.SetMaxIdleConns(10)
 	db.SetMaxOpenConns(100)
 	db.SetConnMaxLifetime(time.Hour)
 

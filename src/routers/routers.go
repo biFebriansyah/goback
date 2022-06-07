@@ -3,7 +3,7 @@ package routers
 import (
 	"net/http"
 
-	"github.com/biFebriansyah/goback/src/configs/database"
+	database "github.com/biFebriansyah/goback/src/database/gorm"
 	"github.com/biFebriansyah/goback/src/modules/v1/products"
 	"github.com/gorilla/mux"
 )
