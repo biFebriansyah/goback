@@ -4,7 +4,9 @@ import (
 	"net/http"
 
 	database "github.com/biFebriansyah/goback/src/database/gorm"
+	"github.com/biFebriansyah/goback/src/modules/v1/auth"
 	"github.com/biFebriansyah/goback/src/modules/v1/products"
+	"github.com/biFebriansyah/goback/src/modules/v1/users"
 	"github.com/gorilla/mux"
 )
 
@@ -18,6 +20,8 @@ func New() (*mux.Router, error) {
 
 	mainRoute.HandleFunc("/", sampleHandler).Methods("GET")
 	products.New(mainRoute, db)
+	users.New(mainRoute, db)
+	auth.New(mainRoute, db)
 
 	return mainRoute, nil
 }

@@ -1,3 +1,5 @@
+@tokens = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlcjIiLCJleHAiOjE2NTQ2NjA4Mjh9.DJBy86V3g5Ya6DrNNABrAHLgwPlB7djxfoFfBihcUR8
+
 POST http://localhost:8080/food HTTP/1.1
 Content-Type: application/json
 
@@ -8,6 +10,7 @@ Content-Type: application/json
 
 ### GET DATA
 GET http://localhost:8080/product/ HTTP/1.1
+Authorization: {{tokens}}
 
 ### SAVE
 POST http://localhost:8080/product/ HTTP/1.1
@@ -17,4 +20,26 @@ Content-Type: application/json
     "name": "indomie soto",
     "price": "2000",
     "image": "imag.jpg"
+}
+
+### Create data Users
+GET http://localhost:8080/users/ HTTP/1.1
+Content-Type: application/json
+
+### Create data Users
+POST http://localhost:8080/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "tester2",
+    "password" : "abcd12345"
+}
+
+### Create data Users
+POST http://localhost:8080/auth/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "tester2",
+    "password" : "abcd12345"
 }
