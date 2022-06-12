@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"fmt"
 	"os"
 	"time"
 
@@ -37,6 +38,8 @@ func CheckToken(token string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	// claims := tokens.Claims.(*claims)
+	claims := tokens.Claims.(*claims)
+	fmt.Println(claims.Username) // get data from token
+
 	return tokens.Valid, nil
 }
