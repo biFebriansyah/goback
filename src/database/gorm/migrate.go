@@ -50,6 +50,7 @@ func dbMigrate(cmd *cobra.Command, args []string) error {
 	m.InitSchema(func(tx *gorm.DB) error {
 		err := tx.AutoMigrate(
 			&models.User{},
+			&models.Cart{},
 			&models.Product{},
 		)
 
