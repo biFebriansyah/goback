@@ -4,6 +4,10 @@
 GET http://localhost:8080/product HTTP/1.1
 Authorization: {{tokens}}
 
+### GET DATA ByID
+GET http://localhost:8080/product/2 HTTP/1.1
+Authorization: {{tokens}}
+
 ### SAVE
 POST http://localhost:8080/product HTTP/1.1
 Content-Type: application/json
