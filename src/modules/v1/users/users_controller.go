@@ -28,6 +28,19 @@ func (rep *users_ctrl) GetAll(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func (rep *users_ctrl) GetByUsername(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	claim_user := r.Context().Value("username")
+	data, err := rep.repo.FindByUsername(claim_user.(string))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	data.Send(w)
+
+}
+
 func (rep *users_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 

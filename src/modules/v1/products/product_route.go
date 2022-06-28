@@ -12,6 +12,6 @@ func New(rt *mux.Router, db *gorm.DB) {
 	repo := NewRepo(db)
 	ctrl := NewCtrl(repo)
 
-	route.HandleFunc("/", middleware.Do(ctrl.GetAll, middleware.CheckAuth)).Methods("GET")
-	route.HandleFunc("/", ctrl.AddData).Methods("POST")
+	route.HandleFunc("", middleware.Do(ctrl.GetAll, middleware.CheckAuth)).Methods("GET")
+	route.HandleFunc("", ctrl.AddData).Methods("POST")
 }

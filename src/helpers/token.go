@@ -1,7 +1,6 @@
 package helpers
 
 import (
-	"fmt"
 	"os"
 	"time"
 
@@ -19,7 +18,7 @@ func NewToken(username string) *claims {
 	return &claims{
 		Username: username,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Minute).Unix(),
+			ExpiresAt: time.Now().Add(time.Minute * 5).Unix(),
 		},
 	}
 }
@@ -30,16 +29,15 @@ func (c *claims) Create() (string, error) {
 	return tokens.SignedString(myScretKeys)
 }
 
-func CheckToken(token string) (bool, error) {
+func CheckToken(token string) (string, error) {
 	tokens, err := jwt.ParseWithClaims(token, &claims{}, func(t *jwt.Token) (interface{}, error) {
 		return []byte(myScretKeys), nil
 	})
 
 	if err != nil {
-		return false, err
+		return "", err
 	}
 	claims := tokens.Claims.(*claims)
-	fmt.Println(claims.Username) // get data from token
 
-	return tokens.Valid, nil
+	return claims.Username, nil
 }

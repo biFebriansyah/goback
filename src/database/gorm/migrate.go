@@ -29,7 +29,17 @@ func dbMigrate(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	m := gormigrate.New(db, gormigrate.DefaultOptions, []*gormigrate.Migration{})
+	m := gormigrate.New(db, gormigrate.DefaultOptions, []*gormigrate.Migration{
+		{
+			ID: "001",
+			Migrate: func(tx *gorm.DB) error {
+				return tx.AutoMigrate(&models.User{}, &models.Cart{}, &models.Product{})
+			},
+			Rollback: func(tx *gorm.DB) error {
+				return tx.Migrator().DropTable(&models.User{}, &models.Cart{}, &models.Product{})
+			},
+		},
+	})
 
 	if migUp {
 		if err = m.Migrate(); err != nil {
@@ -45,24 +55,6 @@ func dbMigrate(cmd *cobra.Command, args []string) error {
 		}
 		log.Fatal("Rollback did run successfully")
 		return nil
-	}
-
-	m.InitSchema(func(tx *gorm.DB) error {
-		err := tx.AutoMigrate(
-			&models.User{},
-			&models.Cart{},
-			&models.Product{},
-		)
-
-		if err != nil {
-			return err
-		}
-
-		return nil
-	})
-
-	if err = m.Migrate(); err != nil {
-		return err
 	}
 
 	log.Fatal("init schema successfully")

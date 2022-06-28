@@ -1,45 +1,39 @@
-@tokens = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlcjIiLCJleHAiOjE2NTQ2NjA4Mjh9.DJBy86V3g5Ya6DrNNABrAHLgwPlB7djxfoFfBihcUR8
-
-POST http://localhost:8080/food HTTP/1.1
-Content-Type: application/json
-
-{
-    "name": "indomie",
-    "price": 2000
-}
+@tokens = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJzc2F0dSIsImV4cCI6MTY1NjQwOTY1OX0.I9sJ5w3JCSBVg0mvgULGTOKeqhs_Ksx2WAjwkSSyp50
 
 ### GET DATA
-GET http://localhost:8080/product/ HTTP/1.1
+GET http://localhost:8080/product HTTP/1.1
 Authorization: {{tokens}}
 
 ### SAVE
-POST http://localhost:8080/product/ HTTP/1.1
+POST http://localhost:8080/product HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "indomie soto",
-    "price": "2000",
-    "image": "imag.jpg"
+    "name": "Madu TJ",
+    "price": "20000",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa libero, repellendus eum similique dolorem. Rem sequi, beatae expedita ab cumque maxime nam voluptate nesciunt atque animi reprehenderit quos culpa!",
+    "image": "https://res.cloudinary.com/devops2/image/upload/v1656409207/products/madutj_cjftix.jpg"
 }
 
 ### Create data Users
-GET http://localhost:8080/users/ HTTP/1.1
+GET http://localhost:8080/users HTTP/1.1
 Content-Type: application/json
+Authorization: {{tokens}}
 
 ### Create data Users
-POST https://mygoback.herokuapp.com/users/ HTTP/1.1
+POST http://localhost:8080/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "tester2",
+    "username" : "userssatu",
     "password" : "abcd12345"
 }
 
-### Create data Users
-POST http://localhost:8080/auth/ HTTP/1.1
+### Loginn
+POST http://localhost:8080/auth HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "tester2",
+    "username" : "userssatu",
     "password" : "abcd12345"
 }

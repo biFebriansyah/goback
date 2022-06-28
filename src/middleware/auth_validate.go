@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"context"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -25,11 +27,15 @@ func CheckAuth(next http.HandlerFunc) http.HandlerFunc {
 			return
 		}
 
-		if !checkToken {
+		if checkToken == "" {
 			helpers.New("Silahkan login kembali", 401, false).Send(w)
 			return
 		}
 
-		next.ServeHTTP(w, r)
+		fmt.Println(checkToken)
+
+		ctx := context.WithValue(r.Context(), "username", checkToken)
+
+		next.ServeHTTP(w, r.WithContext(ctx))
 	}
 }
