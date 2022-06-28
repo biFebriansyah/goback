@@ -1,1 +1,1 @@
-web: ./build/goback serve
+web: ./bin/goback serve

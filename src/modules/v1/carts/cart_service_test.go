@@ -1,6 +1,8 @@
 package carts
 
 import (
+	"fmt"
+	"reflect"
 	"testing"
 
 	"github.com/biFebriansyah/goback/src/database/gorm/models"
@@ -23,7 +25,10 @@ func TestGetByUserId(t *testing.T) {
 	var expectId uint = 1
 
 	carts := data.Data.(*models.Cart)
-	assert.Equal(t, expectId, carts.ID, "Expect id = 1")
+
+	fmt.Println(reflect.ValueOf(carts.ID).Kind())
+
+	assert.Equal(t, expectId, carts.Products.Name, "Expect id = 1")
 	assert.Nil(t, err)
 
 }

@@ -4,8 +4,10 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"runtime"
 
 	"github.com/biFebriansyah/goback/src/routers"
+	"github.com/rs/cors"
 	"github.com/spf13/cobra"
 )
 
@@ -20,12 +22,20 @@ func serve(cmd *cobra.Command, args []string) error {
 		var addrs string = "0.0.0.0:8080"
 
 		if pr := os.Getenv("PORT"); pr != "" {
-			addrs = "0.0.0.0:" + pr
+			addrs = ":" + pr
 		}
 
+		log.Println("Running With" + runtime.GOOS)
 		log.Println("App running on " + addrs)
 
-		if err := http.ListenAndServe(addrs, mainRoute); err != nil {
+		// t := cors.New(cors.Options{
+		// 	AllowedOrigins: []string{"*"},                              // All origins
+		// 	AllowedMethods: []string{"GET", "POST", "HEAD", "OPTIONS"}, // Allowing only get, just an example
+		// })
+
+		t := cors.AllowAll()
+
+		if err := http.ListenAndServe(addrs, t.Handler(mainRoute)); err != nil {
 			return err
 		}
 

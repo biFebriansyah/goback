@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Cart struct {
 	ID         uint      `gorm:"primaryKey" json:"id,omitempty"`
@@ -10,5 +12,4 @@ type Cart struct {
 	CreatedAt  time.Time `json:"created_at"`
 	UpdateAt   time.Time `json:"update_at"`
 }
-
 type Carts []Cart

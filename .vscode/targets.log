@@ -1,0 +1,360 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Jun 20 15:46:29 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+NNN_BMS = d:~/Downloads;D:~/Documents;t:~/Temporary
+# environment
+RIPGREP_CONFIG_PATH = /home/by/.ripgreprc
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/by/Code/golang/src/github.com/biFebriansyah/goback
+# makefile
+SHELL = /bin/sh
+# environment
+PROMPT_EOL_MARK = 
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/share/code/code
+# environment
+JOURNAL_STREAM = 8:55348
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# environment
+USERNAME = by
+# environment
+MAKELEVEL := 0
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+NNN_PLUG = D:mediainf
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+LESS_TERMCAP_se = [0m
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 2)
+APP_EXE = "./build/$(APP)"
+# environment
+MANAGERPID = 2118
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ec781db2-b990-4a47-bca8-1b30a887e032.sock
+# environment
+LC_NAME = id_ID.UTF-8
+# environment
+VSCODE_CWD = /home/by
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/by/.config/composer/vendor/bin:/home/by/.npm-global/bin:/home/by/.cargo/bin:/home/by/.gem/bin:/home/by/.local/bin:/usr/local/go/bin
+# environment
+LESS_TERMCAP_mb = [1;31m
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/antikythera:@/tmp/.ICE-unix/2335,unix/antikythera:/tmp/.ICE-unix/2335
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+NNN_TRASH = 1
+# environment
+TYPEWRITTEN_ROOT = /home/by/.oh-my-zsh/themes/typewritten
+# environment
+GOPATH = /home/by/Code/golang
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = b387dec68e114cb1898b3689d1877c8a
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = no=0:fi=0:rs=0:di=36:ln=4;35:mh=4;32:pi=30;44:so=38;5;125;44:do=30;45:bd=38;5;221;44:cd=38;5;255;44:or=5;38;5;255;41:mi=5;38;5;255;41:su=30;41:sg=30;43:ca=30;42:tw=38;5;161;46:ow=30;46:st=38;5;54;44:ex=1;31:*.info=34:*.log=34:*.markdown=34:*.md=34:*.MD=34:*.mkd=34:*.org=34:*.rst=34:*.txt=34:*.TXT=34:*AUTHORS=1;34:*Changelog=1;34:*ChangeLog=1;34:*CHANGELOG=1;34:*CHANGELOG.md=1;34:*CHANGES=1;34:*CHANGES.md=1;34:*code-of-conduct.md=1;34:*CODE_OF_CONDUCT.md=1;34:*CONTRIBUTING=1;34:*contributing.md=1;34:*CONTRIBUTING.md=1;34:*CONTRIBUTORS=1;34:*COPYING=1;34:*COPYRIGHT=1;34:*HACKING=1;34:*HISTORY=1;34:*INSTALL=1;34:*INSTALL.md=1;34:*LICENSE=1;34:*LICENSE.md=1;34:*LICENSE.MD=1;34:*NEWS=1;34:*NOTICE=1;34:*PATENTS=1;34:*README=1;34:*readme.md=1;34:*README.md=1;34:*README.MD=1;34:*README.rst=1;34:*THANKS=1;34:*TODO=1;34:*VERSION=1;34:*.ac=32:*.asm=32:*.aspx=32:*.bash=32:*.c=32:*.C=32:*.cc=32:*.cl=32:*.class=32:*.coffee=32:*.cpp=32:*.csh=32:*.css=32:*.csv=32:*.cxx=32:*.db=32:*.el=32:*.erb=32:*.f90=32:*.fish=32:*.go=32:*.h=32:*.haml=32:*.hpp=32:*.hs=32:*.htm=32:*.html=32:*.java=32:*.js=32:*.json=32:*.l=32:*.less=32:*.lisp=32:*.lock=32:*.lua=32:*.m=32:*.man=32:*.n=32:*.p=32:*.php=32:*.pl=32:*.pm=32:*.pod=32:*.py=32:*.r=32:*.rb=32:*.rdf=32:*.rs=32:*.rss=32:*.sass=32:*.scss=32:*.sh=32:*.shtml=32:*.sql=32:*.sqlite=32:*.sv=32:*.svh=32:*.tex=32:*.toml=32:*.ts=32:*.v=32:*.vh=32:*.vhd=32:*.vim=32:*.xml=32:*.yaml=32:*.yml=32:*.zsh=32:*.am=38;5;246:*.in=38;5;246:*.m4=38;5;246:*.editorconfig=38;5;246:*.env=38;5;246:*.example=38;5;246:*.gitignore=38;5;246:*.gitattributes=38;5;246:*.gitmodules=38;5;246:*Makefile=32:*.3des=34:*.aes=34:*.asc=34:*.cer=34:*.cfg=34:*.conf=34:*.csr=34:*.desktop=34:*.enc=34:*.gpg=34:*.ini=34:*.otf=34:*.pgp=34:*.pid=34:*.ttf=34:*.apk=31:*.app=31:*.bat=31:*.com=31:*.exe=31:*.ai=33:*.bmp=33:*.cdr=33:*.cgm=33:*.dl=33:*.dvi=33:*.emf=33:*.eps=33:*.gif=33:*.ico=33:*.jpeg=33:*.jpg=33:*.JPG=33:*.mng=33:*.pbm=33:*.pcx=33:*.pgm=33:*.png=33:*.PNG=33:*.ppm=33:*.pps=33:*.ppsx=33:*.ps=33:*.psd=33:*.svg=33:*.svgz=33:*.tga=33:*.tif=33:*.tiff=33:*.xbm=33:*.xcf=33:*.xpm=33:*.xwd=33:*.yuv=33:*.aac=33:*.au=33:*.flac=33:*.m4a=33:*.mid=33:*.midi=33:*.mka=33:*.mp3=33:*.mpa=33:*.ogg=33:*.opus=33:*.ra=33:*.wav=33:*.wma=33:*.3g2=33:*.3gp=33:*.anx=33:*.asf=33:*.ass=33:*.avi=33:*.axv=33:*.flc=33:*.fli=33:*.flv=33:*.gl=33:*.m2v=33:*.m4v=33:*.mkv=33:*.mov=33:*.MOV=33:*.mp4=33:*.MP4=33:*.mp4v=33:*.mpeg=33:*.mpg=33:*.nuv=33:*.ogm=33:*.ogv=33:*.ogx=33:*.qt=33:*.rm=33:*.rmvb=33:*.srt=33:*.swf=33:*.vob=33:*.vtt=33:*.webm=33:*.wmv=33:*.xspf=33:*.djvu=31:*.doc=31:*.docx=31:*.dot=31:*.dotx=31:*.fla=31:*.odp=31:*.ods=31:*.odt=31:*.otp=31:*.ots=31:*.ott=31:*.pdf=31:*.ppt=31:*.pptx=31:*.rtf=31:*.vcf=31:*.wps=31:*.xls=31:*.xlsx=31:*.7z=35:*.arj=35:*.bin=35:*.bz=35:*.bz2=35:*.cab=35:*.crx=35:*.deb=35:*.dmg=35:*.gem=35:*.gz=35:*.iso=35:*.jar=35:*.lz=35:*.lzma=35:*.msi=35:*.pkg=35:*.rar=35:*.rpm=35:*.s7z=35:*.sz=35:*.tar=35:*.tbz=35:*.tbz2=35:*.tgz=35:*.tx=35:*.war=35:*.xpi=35:*.xz=35:*.z=35:*.Z=35:*.zip=35:*.zipx=35:*.torrent=34:*.crdownload=37:*~=1;34:*#=1;34:*.bak=38;5;246:*.BAK=38;5;246:*.dat=38;5;246:*.DAT=38;5;246:*.dist=38;5;246:*.DIST=38;5;246:*.dll=38;5;246:*.o=38;5;246:*.off=38;5;246:*.OFF=38;5;246:*.old=38;5;246:*.OLD=38;5;246:*.org_archive=38;5;246:*.orig=38;5;246:*.ORIG=38;5;246:*.rlib=38;5;246:*.sassc=38;5;246:*.swo=38;5;246:*.swp=38;5;246:*.tmp=38;5;246:*lockfile=38;5;246:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 201966
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+LESS_TERMCAP_me = [0m
+# environment
+VISUAL = vim
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/by/Code/golang/src/github.com/biFebriansyah/goback
+# default
+.LOADED := 
+# environment
+BAT_THEME = Material-Theme-Darker
+# environment
+SSH_AGENT_PID = 2293
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+LESS_TERMCAP_ue = [0m
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+GOMODCACHE = /home/by/Code/golang/pkg/mod
+# environment
+HOME = /home/by
+# environment
+VSCODE_CODE_CACHE_PATH = /home/by/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# environment
+LOGNAME = by
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+NNN_FCOLORS = 03040601000205f7d204d9f7
+# environment
+ZSH = /home/by/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LESS_TERMCAP_md = [1;34m
+# environment
+LC_TIME = id_ID.UTF-8
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+ 
+# environment
+QT_IM_MODULE = ibus
+# environment
+SHLVL = 0
+# environment
+LESS_TERMCAP_so = [38;5;215m
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = by
+# environment
+LC_MONETARY = id_ID.UTF-8
+# makefile
+.DEFAULT_GOAL := build
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LESS = --RAW-CONTROL-CHARS
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = id_ID.UTF-8
+# makefile (from 'Makefile', line 1)
+APP = goback
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/by
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_US.UTF-8
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-a8f1b5b7-1.68.0-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+LESS_TERMCAP_us = [4;35m
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+HISTORY_IGNORE = ([bf]g|c|clear|e|exit|h|history|incognito|l|l[adfls]|pwd|z)
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = id_ID.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# default
+MAKEFILES := 
+# environment
+LC_NUMERIC = id_ID.UTF-8
+# automatic
+<F = $(notdir $<)
+# environment
+LC_MEASUREMENT = id_ID.UTF-8
+# environment
+EDITOR = subl
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LC_IDENTIFICATION = id_ID.UTF-8
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = id_ID.UTF-8
+# environment
+FZF_DEFAULT_OPTS =      --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662     --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 201966
+# variable set hash-table stats:
+# Load=137/1024=13%, Rehash=0, Collisions=24/162=15%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2053, inode 4046966): 20 files, no impossibilities.
+
+# 20 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 10:14:03.110129581
+#  File has been updated.
+#  Successfully updated.
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	go test -cover -v ./...
+
+build:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
+	mkdir -p ./build && CGO_ENABLED=0 GOOS=linux go build -o ${APP_EXE}
+
+# Not a target:
+ 
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/16=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 26 / storage = 233 B / avg = 8 B
+# current buf: size = 8162 B / used = 233 B / count = 26 / avg = 8 B
+
+# strcache performance: lookups = 33 / hit rate = 21%
+# hash-table stats:
+# Load=26/8192=0%, Rehash=0, Collisions=1/33=3%
+# Finished Make data base on Mon Jun 20 15:46:29 2022
+
+ 

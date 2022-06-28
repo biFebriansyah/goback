@@ -24,6 +24,7 @@ func New() (*mux.Router, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	mainRoute.Use(nrgorilla.Middleware(nRelic))
 
 	db, err := database.New()
