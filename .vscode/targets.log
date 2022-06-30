@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 20 15:46:29 2022
+# Make data base, printed on Thu Jun 30 09:22:11 2022
 
 # Variables
 
@@ -55,7 +55,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:55348
+JOURNAL_STREAM = 8:657091
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -83,9 +83,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 2)
 APP_EXE = "./build/$(APP)"
 # environment
-MANAGERPID = 2118
+MANAGERPID = 107632
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ec781db2-b990-4a47-bca8-1b30a887e032.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-47f75ce4-e789-4109-956a-5a1f9bfc45e4.sock
 # environment
 LC_NAME = id_ID.UTF-8
 # environment
@@ -105,7 +105,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/antikythera:@/tmp/.ICE-unix/2335,unix/antikythera:/tmp/.ICE-unix/2335
+SESSION_MANAGER = local/antikythera:@/tmp/.ICE-unix/107848,unix/antikythera:/tmp/.ICE-unix/107848
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -121,7 +121,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = b387dec68e114cb1898b3689d1877c8a
+INVOCATION_ID = 20894dffa88f4e80ac9bb162a3ad731f
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 201966
+GIO_LAUNCHED_DESKTOP_FILE_PID = 321591
 # automatic
 %F = $(notdir $%)
 # environment
@@ -149,7 +149,7 @@ PWD = /home/by/Code/golang/src/github.com/biFebriansyah/goback
 # environment
 BAT_THEME = Material-Theme-Darker
 # environment
-SSH_AGENT_PID = 2293
+SSH_AGENT_PID = 107806
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -161,7 +161,7 @@ GOMODCACHE = /home/by/Code/golang/pkg/mod
 # environment
 HOME = /home/by
 # environment
-VSCODE_CODE_CACHE_PATH = /home/by/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /home/by/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = by
 # environment
@@ -186,7 +186,6 @@ LC_TIME = id_ID.UTF-8
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
- 
 # environment
 QT_IM_MODULE = ibus
 # environment
@@ -224,7 +223,7 @@ OLDPWD = /home/by
 # environment
 LANGUAGE = en_US.UTF-8
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-a8f1b5b7-1.68.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-a8f1b5b7-1.68.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -280,13 +279,14 @@ LC_IDENTIFICATION = id_ID.UTF-8
 # environment
 LC_ADDRESS = id_ID.UTF-8
 # environment
+ 
 FZF_DEFAULT_OPTS =      --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662     --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc
 # environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 201966
+VSCODE_PID = 321591
 # variable set hash-table stats:
 # Load=137/1024=13%, Rehash=0, Collisions=24/162=15%
 
@@ -335,7 +335,6 @@ build:
 	mkdir -p ./build && CGO_ENABLED=0 GOOS=linux go build -o ${APP_EXE}
 
 # Not a target:
- 
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -355,6 +354,6 @@ build:
 # strcache performance: lookups = 33 / hit rate = 21%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=1/33=3%
-# Finished Make data base on Mon Jun 20 15:46:29 2022
+# Finished Make data base on Thu Jun 30 09:22:11 2022
 
  

@@ -36,7 +36,19 @@ func (r *users_repo) FindByUsername(username string) (*models.User, error) {
 		return nil, errors.New("Gagal mengambil data")
 	}
 
+	data.Password = ""
 	return &data, nil
+}
+
+func (r *users_repo) UserExsist(username string) bool {
+	var data models.User
+	result := r.db.First(&data, "username = ?", username)
+
+	if result.Error != nil {
+		return false
+	}
+
+	return true
 }
 
 func (r *users_repo) Add(data *models.User) (*models.User, error) {

@@ -1,36 +1,40 @@
-@tokens = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJzc2F0dSIsImV4cCI6MTY1NjQwOTY1OX0.I9sJ5w3JCSBVg0mvgULGTOKeqhs_Ksx2WAjwkSSyp50
+@user = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJyb2xlIjoiIiwiZXhwIjoxNjU2NTYwMDU2fQ.PG5BUUwlL5KTZYatC5XON9c_X1VaH5hHiPdpnJcMMYY
+
+@admin = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6IiIsImV4cCI6MTY1NjU2MDEwM30.pLorDxRYggggJhOwYKljkag2Cx_NqhnIfWiPzEusOLY
 
 ### GET DATA
 GET http://localhost:8080/product HTTP/1.1
-Authorization: {{tokens}}
+Authorization: {{user}}
 
 ### GET DATA ByID
 GET http://localhost:8080/product/2 HTTP/1.1
-Authorization: {{tokens}}
+Authorization: {{user}}
 
 ### SAVE
 POST http://localhost:8080/product HTTP/1.1
 Content-Type: application/json
+Authorization: {{user}}
 
 {
-    "name": "Madu TJ",
-    "price": "20000",
+    "name": "Nescafe latte",
+    "price": "10000",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa libero, repellendus eum similique dolorem. Rem sequi, beatae expedita ab cumque maxime nam voluptate nesciunt atque animi reprehenderit quos culpa!",
-    "image": "https://res.cloudinary.com/devops2/image/upload/v1656409207/products/madutj_cjftix.jpg"
+    "image": "https://res.cloudinary.com/devops2/image/upload/v1656413859/products/Nescafe-RTD-Latte-240ml_n2yypt.jpg"
 }
 
-### Create data Users
-GET http://localhost:8080/users HTTP/1.1
+### get Users
+GET http://localhost:8080/users/all HTTP/1.1
 Content-Type: application/json
-Authorization: {{tokens}}
+Authorization: {{user}}
 
 ### Create data Users
 POST http://localhost:8080/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "userssatu",
-    "password" : "abcd12345"
+    "username" : "user",
+    "password" : "abcd12345",
+    "role": "users"
 }
 
 ### Loginn
@@ -38,6 +42,6 @@ POST http://localhost:8080/auth HTTP/1.1
 Content-Type: application/json
 
 {
-    "username" : "userssatu",
+    "username" : "admin",
     "password" : "abcd12345"
 }

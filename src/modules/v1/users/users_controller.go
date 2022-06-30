@@ -28,7 +28,7 @@ func (rep *users_ctrl) GetAll(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (rep *users_ctrl) GetByUsername(w http.ResponseWriter, r *http.Request) {
+func (rep *users_ctrl) GetUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	claim_user := r.Context().Value("username")

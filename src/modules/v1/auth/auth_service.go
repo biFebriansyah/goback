@@ -28,7 +28,7 @@ func (r *auth_service) Login(body models.User) (*help.Response, error) {
 		return help.New("Password salah", 401, true), nil
 	}
 
-	token := help.NewToken(body.Username)
+	token := help.NewToken(body.Username, user.Role)
 	theToken, err := token.Create()
 	if err != nil {
 		return nil, err

@@ -11,14 +11,16 @@ var myScretKeys = []byte(os.Getenv("JWT_KETS"))
 
 type claims struct {
 	Username string `json:"username"`
+	Role     string `json:"role"`
 	jwt.StandardClaims
 }
 
-func NewToken(username string) *claims {
+func NewToken(username string, role string) *claims {
 	return &claims{
 		Username: username,
+		Role:     role,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Minute * 5).Unix(),
+			ExpiresAt: time.Now().Add(time.Hour * 5).Unix(),
 		},
 	}
 }
@@ -29,15 +31,15 @@ func (c *claims) Create() (string, error) {
 	return tokens.SignedString(myScretKeys)
 }
 
-func CheckToken(token string) (string, error) {
+func CheckToken(token string) (*claims, error) {
 	tokens, err := jwt.ParseWithClaims(token, &claims{}, func(t *jwt.Token) (interface{}, error) {
 		return []byte(myScretKeys), nil
 	})
 
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	claims := tokens.Claims.(*claims)
 
-	return claims.Username, nil
+	return claims, nil
 }

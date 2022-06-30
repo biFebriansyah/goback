@@ -9,6 +9,7 @@ type UserRepo interface {
 	FindAll() (*models.Users, error)
 	FindByUsername(username string) (*models.User, error)
 	Add(*models.User) (*models.User, error)
+	UserExsist(username string) bool
 }
 
 type UserService interface {

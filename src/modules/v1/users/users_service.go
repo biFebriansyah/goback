@@ -34,6 +34,10 @@ func (re *users_service) FindByUsername(username string) (*help.Response, error)
 	return respone, nil
 }
 func (re *users_service) Save(usr *models.User) (*help.Response, error) {
+	if check := re.rep.UserExsist(usr.Username); check {
+		return help.New("username already exsist", 400, true), nil
+	}
+
 	hassPssword, err := help.HashPasword(usr.Password)
 	if err != nil {
 		return nil, err
