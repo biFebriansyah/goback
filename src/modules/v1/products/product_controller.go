@@ -50,13 +50,26 @@ func (rep *product_ctrl) GetById(w http.ResponseWriter, r *http.Request) {
 func (rep *product_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
+	uploads := r.Context().Value("file")
 	var data models.Product
-	json.NewDecoder(r.Body).Decode(&data)
+	err := json.NewDecoder(r.Body).Decode(&data)
+	if err != nil {
+		fmt.Fprint(w, err.Error())
+	}
 
+	data.Image = uploads.(string)
 	result, err := rep.repo.Add(&data)
 	if err != nil {
 		fmt.Fprint(w, err.Error())
 	}
 
 	json.NewEncoder(w).Encode(&result)
+}
+
+func (rep *product_ctrl) TESTPOST(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	uploads := r.Context().Value("file")
+
+	w.Write([]byte(uploads.(string)))
 }

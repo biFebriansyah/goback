@@ -5,19 +5,16 @@ import "net/http"
 type Middleware func(http.HandlerFunc) http.HandlerFunc
 type Adapter func(http.Handler) http.Handler
 
-func Do(hf http.HandlerFunc, middle ...Middleware) http.HandlerFunc {
-	for _, m := range middle {
-		hf = m(hf)
+func Handle(hf http.HandlerFunc, middle ...Middleware) http.HandlerFunc {
+	for i := len(middle); i > 0; i-- {
+		hf = middle[i-1](hf)
 	}
-
 	return hf
 }
 
-func Adapt(f func(http.ResponseWriter, *http.Request), adapters ...Adapter) http.Handler {
-	var handler http.Handler
+func Adapts(handler http.Handler, adapters ...Adapter) http.Handler {
 	for i := len(adapters); i > 0; i-- {
-		handlers := http.HandlerFunc(f)
-		handler = adapters[i-1](handlers)
+		handler = adapters[i-1](handler)
 	}
 	return handler
 }

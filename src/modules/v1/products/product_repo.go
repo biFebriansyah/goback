@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	"github.com/biFebriansyah/goback/src/database/gorm/models"
+	"github.com/biFebriansyah/goback/src/helpers"
 	"gorm.io/gorm"
 )
 
@@ -40,9 +41,13 @@ func (r *product_repo) FindById(id int) (*models.Products, error) {
 }
 
 func (r *product_repo) Add(data *models.Product) (*models.Product, error) {
+	uploadResult, err := helpers.CloudUpload(data.Image)
+	if err != nil {
+		return nil, errors.New("Gagal Upload clouds")
+	}
 
+	data.Image = uploadResult
 	result := r.db.Create(data)
-
 	if result.Error != nil {
 		return nil, errors.New("Gagal menyimpan data")
 	}

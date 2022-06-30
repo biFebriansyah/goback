@@ -36,7 +36,6 @@ func (r *users_repo) FindByUsername(username string) (*models.User, error) {
 		return nil, errors.New("Gagal mengambil data")
 	}
 
-	data.Password = ""
 	return &data, nil
 }
 

@@ -13,6 +13,7 @@ func New(rt *mux.Router, db *gorm.DB) {
 	ctrl := NewCtrl(repo)
 
 	route.HandleFunc("", ctrl.GetAll).Methods("GET")
+	route.HandleFunc("/test", middleware.Handle(ctrl.TESTPOST, middleware.FileUpload)).Methods("POST")
 	route.HandleFunc("/{id}", ctrl.GetById).Methods("GET")
-	route.HandleFunc("", middleware.Do(ctrl.AddData, middleware.CheckAuth)).Methods("POST")
+	route.HandleFunc("", middleware.Handle(ctrl.AddData, middleware.AuthTest("users"), middleware.FileUpload)).Methods("POST")
 }
