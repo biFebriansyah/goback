@@ -9,6 +9,7 @@ import (
 	"github.com/biFebriansyah/goback/src/database/gorm/models"
 	"github.com/biFebriansyah/goback/src/helpers"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/schema"
 )
 
 type product_ctrl struct {
@@ -50,17 +51,32 @@ func (rep *product_ctrl) GetById(w http.ResponseWriter, r *http.Request) {
 func (rep *product_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	uploads := r.Context().Value("file")
+	var images string = ""
 	var data models.Product
-	err := json.NewDecoder(r.Body).Decode(&data)
+	var decoder = schema.NewDecoder()
+
+	err := r.ParseForm()
 	if err != nil {
-		fmt.Fprint(w, err.Error())
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
 
-	data.Image = uploads.(string)
+	uploads := r.Context().Value("file")
+	if uploads != nil {
+		images = uploads.(string)
+	}
+
+	err = decoder.Decode(&data, r.PostForm)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	data.Image = images
 	result, err := rep.repo.Add(&data)
 	if err != nil {
-		fmt.Fprint(w, err.Error())
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
 
 	json.NewEncoder(w).Encode(&result)
@@ -69,7 +85,26 @@ func (rep *product_ctrl) AddData(w http.ResponseWriter, r *http.Request) {
 func (rep *product_ctrl) TESTPOST(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	uploads := r.Context().Value("file")
+	err := r.ParseForm()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 
-	w.Write([]byte(uploads.(string)))
+	// fmt.Printf(err.Error())
+
+	// uploads := r.Context().Value("file")
+	var data models.Product
+	var decoder = schema.NewDecoder()
+
+	err = decoder.Decode(&data, r.PostForm)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	// data.Image = uploads.(string)
+	fmt.Println(data)
+
+	w.Write([]byte("masukk"))
 }

@@ -15,8 +15,15 @@ func FileUpload(next http.HandlerFunc) http.HandlerFunc {
 
 		var pathfile string
 
+		err := r.ParseForm()
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+
 		if err := r.ParseMultipartForm(32 << 20); err != nil {
-			fmt.Fprint(w, err.Error())
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
 		}
 
 		for _, fheaders := range r.MultipartForm.File {
@@ -38,7 +45,6 @@ func FileUpload(next http.HandlerFunc) http.HandlerFunc {
 		}
 
 		log.Println("Upload Middleware Pass")
-
 		// share context to controller
 		ctx := context.WithValue(r.Context(), "file", pathfile)
 
