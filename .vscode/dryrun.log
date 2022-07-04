@@ -1,5 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/by/Code/golang/src/github.com/biFebriansyah/goback'
+ 
 mkdir -p ./build && CGO_ENABLED=0 GOOS=linux go build -o "./build/goback"
 make: Leaving directory '/home/by/Code/golang/src/github.com/biFebriansyah/goback'
  
